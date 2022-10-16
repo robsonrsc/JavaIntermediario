@@ -2,9 +2,7 @@ package Collections;
 
 import org.w3c.dom.ls.LSOutput;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
+import java.util.*;
 
 public class ExercicioList {
     public static void main(String[] args) {
@@ -48,6 +46,56 @@ public class ExercicioList {
         //System.out.println("Exiba as notas na ordem em que foi inserido");
         //for (Double nota : notas) System.out.println(nota);
 
-        
+
+        //Exibir a terceira nota inserido
+        System.out.println("A terceira nota inserida na tabela e: "+notas.get(2));
+
+        //exibir a menor nota, e possivel usando a classe colecction
+
+        System.out.println("A menor nota e :" + Collections.min(notas));
+
+        System.out.println("A menor nota e :" + Collections.max(notas));
+
+
+        Iterator<Double> iterator = notas.iterator();
+        Double soma = 0d;
+
+        while (iterator.hasNext()){
+
+            Double next = iterator.next();
+            soma += next;
+        }
+        System.out.println("A soma do itens e: " + soma);
+
+        // para saber a quantidade de itens dentro da lista basta usar o comando size
+        System.out.println("Exiba a media das notas");
+        System.out.println(notas.size());
+        System.out.println("A media de notas sera: " + soma/ notas.size());
+
+        //removendo um item atraves do valor dela
+        notas.remove(9d);
+
+        System.out.println(notas);
+
+
+        notas.remove(0);
+        System.out.println(notas);
+
+        //remoevendo notas menores que sete
+
+        Iterator<Double> iterator1 = notas.iterator();
+        while (iterator1.hasNext()){
+            Double next = iterator1.next();
+            if (next<8) iterator1.remove();
+        };
+        System.out.println(notas);
+
+        //limpar toda lista
+
+        System.out.println("Apague toda lista");
+
+        notas.clear();
+        System.out.println(notas);
+
     }
 }
