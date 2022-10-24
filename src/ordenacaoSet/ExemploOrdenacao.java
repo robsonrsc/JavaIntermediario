@@ -11,7 +11,7 @@ public class ExemploOrdenacao {
         Set <Series> minhasSeries = new HashSet<>(){{
 
             add(new Series("O perigo moora ao lado","Drama",25));
-            add(new Series("O perigo moora ao lado","ANime",120));
+            add(new Series("O perigo moora ao lado","Anime",120));
             add(new Series("Dark","Sci-Fi",90));
 
         }};
@@ -153,3 +153,4 @@ class ComparatorNomeGeneroTempo implements  Comparator<Series>{
 
     }
 }
+
