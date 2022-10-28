@@ -3,7 +3,9 @@ package aulaStream;
 import java.util.Arrays;
 import java.util.List;
 import java.util.function.Consumer;
+import java.util.function.DoubleConsumer;
 import java.util.function.Function;
+import java.util.function.Predicate;
 import java.util.stream.Collectors;
 
 public class ExercicioStream {
@@ -48,11 +50,51 @@ public class ExercicioStream {
                 .map(Integer::parseInt)
                 .collect(Collectors.toList())
                ;
-
-        System.out.println(inteiro);
-
-
+/*
+        System.out.println("Pegue os numeros pares e maiores do que dois");
+       List<Integer> paresMaiorque2 =  list.stream()
+                .map(Integer::parseInt)
+                .filter(new Predicate<Integer>() {
+                    @Override
+                    public boolean test(Integer i) {
+                        if (i%2 ==0 && i>2) return true;
+                        return false;
                     }
+                }).collect(Collectors.toList());
+
+        System.out.println(paresMaiorque2);*/
+
+        System.out.println("Pegue os numeros pares e maiores do que dois refatorado, OLHE O CODIGO ACIMA");
+        List<Integer> paresMaiorque2 =  list.stream()
+                .map(Integer::parseInt)
+                .filter(i -> i%2 ==0 && i>2).collect(Collectors.toList());
+
+        System.out.println(paresMaiorque2);
+
+
+
+
+
+        System.out.println("\n###########################################################################");
+
+        System.out.println("Mostre a media dos numeros");
+
+        list.stream()
+                .mapToInt(Integer::parseInt)
+                .average()
+                .ifPresent(new DoubleConsumer() {
+                    @Override
+                    public void accept(double v) {
+                        System.out.println(v);
+                    }
+                });
+
+
+
+
+
+
+    }
 
 
 
